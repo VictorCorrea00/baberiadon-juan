@@ -540,9 +540,9 @@ a {
 
 .team-img-wrapper img {
     width: 100%;
-    max-height: 450px;
-    object-fit: cover;
-    object-position: center top;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
     border-radius: 4px;
     display: block;
 }
