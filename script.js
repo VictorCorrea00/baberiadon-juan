@@ -61,6 +61,33 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    // 3b. Slide-In Animations (Gallery images from sides)
+    const slideElements = document.querySelectorAll('.slide-in');
+
+    const slideCallback = (entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Delay escalonado para que entren una por una
+                const delay = Array.from(slideElements).indexOf(entry.target) * 200;
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, delay);
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const slideOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -30px 0px"
+    };
+
+    const slideObserver = new IntersectionObserver(slideCallback, slideOptions);
+
+    slideElements.forEach(el => {
+        slideObserver.observe(el);
+    });
+
     // 4. Number Counter Animation
     const counters = document.querySelectorAll('.counter');
     let counted = false;
