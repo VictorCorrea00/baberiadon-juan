@@ -748,9 +748,13 @@ footer {
     transform: translateX(120px) scale(0.95);
 }
 
+.slide-in.slide-zoom {
+    transform: scale(0.3) rotate(-10deg);
+}
+
 .slide-in.active {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1) rotate(0deg);
 }
 
 /* =========================================
