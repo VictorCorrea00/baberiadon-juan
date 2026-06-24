@@ -784,16 +784,20 @@ footer {
     /* Hero */
     .hero {
         background-attachment: scroll; /* Parallax no funciona bien en celulares */
+        padding: 90px 15px 40px;
     }
     .hero-content .title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 15px;
     }
     .hero-content .subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 25px;
     }
     .hero-logo-img {
-        width: 130px;
-        height: 130px;
+        width: 110px;
+        height: 110px;
+        margin-bottom: 15px;
     }
     .hero-buttons {
         flex-direction: column;
