@@ -243,38 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // 11. Custom Cursor Logic (Desktop only)
-    if (window.innerWidth > 992) {
-        const cursor = document.querySelector('.custom-cursor');
-        const cursorFollower = document.querySelector('.custom-cursor-follower');
-        
-        if(cursor && cursorFollower) {
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-                
-                // Pequeño delay para el follower (suavidad)
-                setTimeout(() => {
-                    cursorFollower.style.left = e.clientX + 'px';
-                    cursorFollower.style.top = e.clientY + 'px';
-                }, 50);
-            });
-
-            // Hover effects on clickable elements
-            const hoverElements = document.querySelectorAll('a, button, .gallery-img, .faq-question, .theme-btn');
-            hoverElements.forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    cursor.classList.add('hover');
-                    cursorFollower.classList.add('hover');
-                });
-                el.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('hover');
-                    cursorFollower.classList.remove('hover');
-                });
-            });
-        }
-    }
 });
 
 // 7. Preloader Logic (Espera a que TODO descargue, incluyendo imágenes)
