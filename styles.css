@@ -251,14 +251,19 @@ a {
     text-align: center;
 }
 
-/* Overlay más oscuro y profesional para que resalte el texto */
+/* Overlay sutil para que resalte el texto sin tapar la imagen */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.5) 100%);
+    background: linear-gradient(
+        180deg,
+        rgba(5, 5, 5, 0.55) 0%,
+        rgba(5, 5, 5, 0.3) 50%,
+        rgba(5, 5, 5, 0.65) 100%
+    );
     z-index: 1;
 }
 
