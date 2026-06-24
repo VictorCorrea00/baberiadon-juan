@@ -975,6 +975,17 @@ body.light-theme {
     background-image: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F0F0F0 100%);
 }
 
+/* Fix Light Theme contrast over dark hero */
+body.light-theme .hero-content .title,
+body.light-theme .hero-content .subtitle {
+    color: #EFEFEF !important;
+}
+
+body.light-theme .navbar {
+    background: rgba(250, 250, 250, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
 .light-theme .dark-bg {
     background-color: #E8E8E8;
 }
