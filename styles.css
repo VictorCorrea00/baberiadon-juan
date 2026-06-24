@@ -513,9 +513,10 @@ a {
 }
 
 .domicilio-banner {
-    background: var(--bg-card);
-    border: var(--glass-border);
-    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(5, 5, 5, 0.95) 100%);
+    border: 1px solid var(--gold-primary);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
     padding: 30px 40px;
     display: flex;
     justify-content: space-between;
@@ -526,8 +527,8 @@ a {
 }
 
 .domicilio-banner:hover {
-    box-shadow: var(--box-shadow-glow);
-    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    transform: translateY(-5px);
 }
 
 .domicilio-content {
