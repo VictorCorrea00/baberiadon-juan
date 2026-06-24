@@ -129,4 +129,70 @@ document.addEventListener('DOMContentLoaded', () => {
         
         statsObserver.observe(statsSection);
     }
+
+    // 5. Lightbox Logic
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    if(lightbox && galleryImages.length > 0) {
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if(e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+            }
+        });
+    }
+
+    // 6. Testimonials Auto-Slider
+    const track = document.getElementById('testimonialsTrack');
+    if(track) {
+        let cards = document.querySelectorAll('.testimonial-card');
+        if(cards.length > 0) {
+            let currentIndex = 0;
+            
+            setInterval(() => {
+                // Obtenemos el ancho actual en caso de resize (ancho tarjeta + gap 30px)
+                const currentWidth = cards[0].offsetWidth + 30;
+                currentIndex++;
+                
+                // Calculamos cuántos elementos caben en pantalla
+                let visibleCards = 1;
+                if(window.innerWidth > 992) visibleCards = 3;
+                else if (window.innerWidth > 768) visibleCards = 2;
+
+                // Si la tarjeta actual más las visibles exceden el total, volvemos a cero
+                if (currentIndex > cards.length - visibleCards) {
+                    currentIndex = 0;
+                }
+                
+                track.style.transform = `translateX(-${currentIndex * currentWidth}px)`;
+            }, 3000); // Rotar cada 3 segundos
+        }
+    }
+});
+
+// 7. Preloader Logic (Espera a que TODO descargue, incluyendo imágenes)
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if(preloader) {
+        // Un pequeño timeout extra para que se luzca la animación del logo de carga
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 600); // Esperar que termine la animación css fade-out
+        }, 800);
+    }
 });

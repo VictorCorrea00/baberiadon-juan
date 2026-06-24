@@ -61,6 +61,13 @@
     </script>
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <h2>DON JUAN</h2>
+            <div class="loader-line"></div>
+        </div>
+    </div>
 
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
@@ -126,7 +133,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="img/fachada.jpeg" alt="Fachada Barbería Don Juan" class="img-fluid rounded shadow-gold slide-in slide-right">
+                    <img src="img/fachada.jpeg" alt="Fachada Barbería Don Juan" class="img-fluid rounded shadow-gold slide-in slide-right" loading="lazy">
                 </div>
             </div>
         </div>
@@ -139,7 +146,7 @@
             <p class="section-desc">Descubre nuestra limpieza facial profunda y barba terapia.</p>
             
             <div class="video-wrapper mt-4 shadow-gold">
-                <video controls poster="img/logo.jpg">
+                <video controls preload="none" poster="img/logo.jpg">
                     <source src="https://acyyffohsqxabkksvpae.supabase.co/storage/v1/object/sign/web/SERVICIOS%20DON%20JUAN%20Limpieza%20Facial%20+%20Lavado%20capilar%20+%20corte%20%20si%20nunca%20te%20has%20hecho%20una,%20!no%20te%20p.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mNjg5Yjc5My03NzdhLTRlNDUtOTEzYy05ZjIwZGQ5ZTliZDciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ3ZWIvU0VSVklDSU9TIERPTiBKVUFOIExpbXBpZXphIEZhY2lhbCArIExhdmFkbyBjYXBpbGFyICsgY29ydGUgIHNpIG51bmNhIHRlIGhhcyBoZWNobyB1bmEsICFubyB0ZSBwLm1wNCIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODIyMzgzNzMsImV4cCI6MTkzOTkxODM3M30.zd8kSKaHYy3B56F03KIVFrwCujfI1fmviLP465auAEw" type="video/mp4">
                     Tu navegador no soporta la etiqueta de video.
                 </video>
@@ -252,9 +259,43 @@
             <p class="section-desc">Echa un vistazo a nuestros últimos cortes y estilos.</p>
             
             <div class="gallery-grid mt-5">
-                <img src="img/corte1.jpeg" alt="Corte de pelo 1" class="gallery-img slide-in slide-left shadow-gold rounded">
-                <img src="img/corte2.jpeg" alt="Corte de pelo 2" class="gallery-img slide-in slide-left shadow-gold rounded">
-                <img src="img/corte3.jpeg" alt="Corte de pelo 3" class="gallery-img slide-in slide-left shadow-gold rounded">
+                <img src="img/corte1.jpeg" alt="Corte de pelo 1" class="gallery-img slide-in slide-left shadow-gold rounded" loading="lazy">
+                <img src="img/corte2.jpeg" alt="Corte de pelo 2" class="gallery-img slide-in slide-left shadow-gold rounded" loading="lazy">
+                <img src="img/corte3.jpeg" alt="Corte de pelo 3" class="gallery-img slide-in slide-left shadow-gold rounded" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="resenas" class="testimonials section">
+        <div class="container text-center reveal">
+            <p class="section-eyebrow" style="color: var(--gold-primary); letter-spacing: 3px; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">— Experiencias Reales —</p>
+            <h2 class="section-title">Lo que dicen <span>nuestros clientes</span></h2>
+            
+            <div class="testimonials-slider-container mt-5">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Reseña 1 -->
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="review-text">"Excelente atención y el mejor fade de Tacuarembó. El local impecable y los barberos tienen muy buena onda."</p>
+                        <h4 class="client-name">- Carlos M.</h4>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google Review" class="google-logo">
+                    </div>
+                    <!-- Reseña 2 -->
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="review-text">"Me hice la barba terapia y es un viaje de ida. Super relajante, usan productos de primera. Lo recomiendo 100%."</p>
+                        <h4 class="client-name">- Martín S.</h4>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google Review" class="google-logo">
+                    </div>
+                    <!-- Reseña 3 -->
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="review-text">"Llevé a mi hijo a cortarse y tuvieron muchísima paciencia. Quedó hermoso y él se fue feliz. Un lujo de lugar."</p>
+                        <h4 class="client-name">- Andrea P.</h4>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google Review" class="google-logo">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -266,7 +307,7 @@
             <p class="section-desc">Profesionales dedicados a perfeccionar tu imagen.</p>
             
             <div class="team-img-wrapper mt-5">
-                <img src="img/equipo.jpg" alt="Equipo de Barberos Don Juan" class="img-fluid rounded shadow-gold slide-in slide-left">
+                <img src="img/equipo.jpg" alt="Equipo de Barberos Don Juan" class="img-fluid rounded shadow-gold slide-in slide-left" loading="lazy">
             </div>
             <p class="mt-4 team-text">Contamos con un equipo de 5 profesionales altamente capacitados, listos para asesorarte y brindarte el estilo que mejor se adapte a tus facciones. ¡Atendemos con paciencia también a los más pequeños!</p>
         </div>
@@ -325,9 +366,15 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/59891623995?text=Hola,%20quiero%20agendar%20un%20turno" class="float-wa" target="_blank">
+    <a href="https://wa.me/59891623995?text=Hola,%20quiero%20agendar%20un%20turno" class="float-wa pulse-animation" target="_blank">
         <i class="fab fa-whatsapp my-float"></i>
     </a>
+
+    <!-- Lightbox Modal para Galería -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>
