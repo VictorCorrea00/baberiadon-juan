@@ -181,6 +181,100 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000); // Rotar cada 3 segundos
         }
     }
+
+    // 8. FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Cerrar todos
+            faqItems.forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            // Si no estaba activo, abrirlo
+            if(!isActive) {
+                item.classList.add('active');
+                const answer = item.querySelector('.faq-answer');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+
+    // 9. Scroll Progress Bar
+    const progressBar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+        if(progressBar) {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollTop / scrollHeight) * 100;
+            progressBar.style.width = scrolled + '%';
+        }
+    });
+
+    // 10. Light/Dark Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+    
+    // Check local storage for theme
+    if(localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+        if(themeIcon) {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+    }
+
+    if(themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            
+            if(document.body.classList.contains('light-theme')) {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+    }
+
+    // 11. Custom Cursor Logic (Desktop only)
+    if (window.innerWidth > 992) {
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorFollower = document.querySelector('.custom-cursor-follower');
+        
+        if(cursor && cursorFollower) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                // Pequeño delay para el follower (suavidad)
+                setTimeout(() => {
+                    cursorFollower.style.left = e.clientX + 'px';
+                    cursorFollower.style.top = e.clientY + 'px';
+                }, 50);
+            });
+
+            // Hover effects on clickable elements
+            const hoverElements = document.querySelectorAll('a, button, .gallery-img, .faq-question, .theme-btn');
+            hoverElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.classList.add('hover');
+                    cursorFollower.classList.add('hover');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('hover');
+                    cursorFollower.classList.remove('hover');
+                });
+            });
+        }
+    }
 });
 
 // 7. Preloader Logic (Espera a que TODO descargue, incluyendo imágenes)

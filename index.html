@@ -61,6 +61,15 @@
     </script>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container">
+        <div id="scroll-progress"></div>
+    </div>
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader-content">
@@ -83,11 +92,16 @@
                 <li><a href="#equipo">Equipo</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <a href="https://wa.me/59891623995?text=Hola,%20quiero%20agendar%20un%20turno" class="btn-primary nav-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Agendar Turno
-            </a>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+                <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="https://wa.me/59891623995?text=Hola,%20quiero%20agendar%20un%20turno" class="btn-primary nav-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Agendar Turno
+                </a>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
     </nav>
@@ -313,8 +327,58 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section">
+        <div class="container text-center reveal">
+            <h2 class="section-title">Preguntas <span>Frecuentes</span></h2>
+            <p class="section-desc">Resolvemos tus dudas antes de tu visita.</p>
+            
+            <div class="faq-container mt-5 text-left">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Tengo que ir con el cabello lavado?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No es estrictamente necesario, pero lo recomendamos para un mejor resultado. De igual forma, contamos con el servicio de Lavado Capilar si lo prefieres.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Aceptan tarjetas de crédito o débito?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, aceptamos todas las tarjetas de crédito, débito, transferencias bancarias y MercadoPago, además de efectivo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Atienden a niños?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>¡Por supuesto! Tenemos mucha paciencia y experiencia cortando el cabello a los más pequeños para que se sientan cómodos y se vayan con estilo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Qué incluye la Barba Terapia VIP?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Incluye el perfilado y recorte de barba, aplicación de toallas calientes, uso de vaporizador de ozono para abrir poros, exfoliación ligera y masaje facial con productos premium.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Location & Contact -->
-    <section id="contacto" class="contact section">
+    <section id="contacto" class="contact section dark-bg">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info reveal">
