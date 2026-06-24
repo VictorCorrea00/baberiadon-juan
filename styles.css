@@ -237,7 +237,9 @@ a {
    HERO SECTION
    ========================================= */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 120px 0 60px; /* Espacio para el navbar y padding inferior */
     background-image: url('img/fachada.jpeg'); /* SOLICITADO POR EL USUARIO */
     background-size: cover;
     background-position: center;
