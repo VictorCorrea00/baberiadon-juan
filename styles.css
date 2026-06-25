@@ -512,6 +512,43 @@ a {
     white-space: nowrap;
 }
 
+/* Birthday Banner */
+.birthday-banner {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(5, 5, 5, 0.95) 100%);
+    border: 1px solid var(--gold-primary);
+    border-radius: 8px;
+    padding: 25px 35px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+    transition: var(--transition);
+}
+
+.birthday-banner:hover {
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.3);
+    transform: translateY(-3px);
+}
+
+.birthday-banner i {
+    color: var(--gold-primary);
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.birthday-banner h3 {
+    font-size: 1.2rem;
+    color: var(--gold-primary);
+    margin-bottom: 5px;
+}
+
+.birthday-banner p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
 .domicilio-banner {
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(5, 5, 5, 0.95) 100%);
     border: 1px solid var(--gold-primary);
